@@ -1,0 +1,4 @@
+{
+  "mongoUrl": "cluster0.tquetoh.mongodb.net",
+  "collection": "car_manager"
+}
