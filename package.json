@@ -17,7 +17,9 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "docker:build": "npm run build && docker build -t nestjs_mongoose_boilerplate .",
+    "docker:run": "docker run -p 3000:3000 -d -e MONGO_USER=public -e MONGO_PASS= -e PORT=3000 -e HOST=0.0.0.0 nestjs_mongoose_boilerplate"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",

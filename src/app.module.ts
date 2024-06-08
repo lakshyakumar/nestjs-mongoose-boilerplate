@@ -3,6 +3,7 @@ import { CarModule } from './car/car.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { LoggerMiddleware } from './middlewares/logger.middleware';
+import { HealthModule } from './health/health.module';
 
 @Module({
   imports: [CarModule,
@@ -25,6 +26,7 @@ import { LoggerMiddleware } from './middlewares/logger.middleware';
         )}?retryWrites=true&w=majority`,
       }),
     }),
+    HealthModule,
   ],
 })
 export class AppModule {
